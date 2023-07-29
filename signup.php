@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="signup.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="signup_style.css?v=<?php echo time(); ?>">
     <title>Document</title>
 </head>
 <body>
@@ -14,8 +14,8 @@
     <nav class="navbar  sticky-top">
         <div class="row">
             <div ><a href="index.html">Home</a></div>
-            <div ><a href="search.php">Search</a></div>
-            <div ><a href="signup.php">Sign up</a></div>
+            <div ><a href="search_final.php">Search</a></div>
+            <div ><a href="signup_final.php">Sign up</a></div>
             
         </div>
     </nav>
@@ -38,17 +38,15 @@
                 <input type="text"name="name" class="form-control" id="username"  required>
             </div>
             <div class="sid">
-                <label for="sid" class="form-label">Scholar Id:</label>
-                <input type="text"name="sid" class="form-control" id="sid"  required>
+                <label for="sid" class="form-label">Scholar Id(If you are not a student write NA):</label>
+                <input type="text"name="sid" class="form-control" id="sid"  >
             </div>
             <div class="email">
               <label for="useremail" class="form-label">Email address</label>
               <input type="email"name="email" class="form-control" id="useremail" placeholder="eg: abc@gmail.com" required>
             </div>
             <div class="phone">
-              <!-- <div class="input-group-prepend">
-                <span class="input-group-text">Phone Number</span>
-              </div> -->
+              
               <label for="phonenumber" class="form-label">Contact number:</label>
               <input type="tel"name="phone" id="phonenumber" class="form-control" placeholder="Enter phone number" pattern="{10}" required>
           </div>
@@ -76,15 +74,7 @@
               <input class="form-check-input"value="Female" type="radio" name="gender" id="female" >
               <label class="form-check-label" for="female">Female</label>
           </div>
-           
-            <!-- <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password"name="password" class="form-control" id="password" placeholder="Enter your password" required pattern=".{8,15}">
-            </div> 
-            <div class="form-group">
-                <label for="confirmpassword">Confirm Password:</label>
-                <input type="password" name="cpassword" class="form-control" id="confirmpassword" placeholder="Enter your password again" required>
-            </div>  -->
+          
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="declaration">
                 <label class="form-check-label" for="declaration" required>All the above informations furnished by me is true to best of my knowledge. Also I agree to display my details publicly whenever it's required. </label>
