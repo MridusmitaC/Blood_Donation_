@@ -14,8 +14,8 @@
         <nav class="navbar  sticky-top">
             <div class="row">
                 <div ><a href="index.html">Home</a></div>
-                <div ><a href="search.php">Search</a></div>
-                <div ><a href="signup.php">Sign up</a></div>
+                <div ><a href="search_final.php">Search</a></div>
+                <div ><a href="signup_final.php">Sign up</a></div>
 
             </div>
         </nav>
@@ -44,38 +44,58 @@
     </body>
 </html>
 <?php
+
     if(isset($_GET['bloodgroupToSearch'])){ 
+
         $server="localhost";//the server  that we want to connect to
+
         $username="root";//in case of localhost, username is always taken as root
+
         $password="";//password is kept blank in case of local host
-        $database="blood_donation";
+
+        $database="blood_donation";//name of the databse we are working with
 
         $con=mysqli_connect($server,$username,$password,$database);//connecton variable
 
         if(!$con){
+
             die("Connection to this database failed due to".mysqli_connect_error());
+
         }
     
-    $valueToSearch =$_GET['bloodgroupToSearch'];
+            $valueToSearch =$_GET['bloodgroupToSearch'];//retrieves data sent via an HTTP GET request. Specifically, it retrieves the value of the "bloodgroupToSearch" parameter and assigns it to the variable "$valueToSearch"
 
-    $result =mysqli_query($con,"SELECT*FROM `signup` WHERE `bloodgroup`='$valueToSearch'");
+            $result =mysqli_query($con,"SELECT*FROM `signup` WHERE `bloodgroup`='$valueToSearch'");//selects all the rows or entries from database where bloodgroup is same as the value contained in variable valueToSearch.
 
-        if(mysqli_num_rows($result)>0){
-            echo "<p class='confirmation'>These are the available donors.<p>";
-            while($row=mysqli_fetch_array($result)){
-                echo "<div class='result'>";
-                echo "<h6>Name: " . $row["name"] . "</h6>";
-                echo "<p>Scholar ID: " . $row["Scholar Id"] . "</p>";
-                echo "<p>Email: " . $row["email"] . "</p>";
-                echo "<p>Phone: " . $row["phone"] . "</p>";
-                echo "<p>Blood Group: " . $row["bloodgroup"] . "</p>";
-                echo "<p>Gender: " . $row["gender"] . "</p>";
-                echo "</div>";
+            if(mysqli_num_rows($result)>0){
+            
+                echo "<p class='confirmation'>These are the available donors.<p>";
+            
+                while($row=mysqli_fetch_array($result)){
+                
+                    echo "<div class='result'>";
+                
+                    echo "<h6>Name: " . $row["name"] . "</h6>";
+                
+                    echo "<p>Scholar ID: " . $row["Scholar Id"] . "</p>";
+                
+                    echo "<p>Email: " . $row["email"] . "</p>";
+                
+                    echo "<p>Phone: " . $row["phone"] . "</p>";
+                
+                    echo "<p>Blood Group: " . $row["bloodgroup"] . "</p>";
+                
+                    echo "<p>Gender: " . $row["gender"] . "</p>";
+                
+                    echo "</div>";
                 
                 }
-        }
-        else{
+        }else{
+            
             echo "<p class='error'>No donors found.<p>";
+            
         }
+
     }
+
 ?>
