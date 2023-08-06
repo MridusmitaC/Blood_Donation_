@@ -3,13 +3,7 @@
     padding:0px;
     box-sizing: border-box;
 }
-/* body{
-    background-image: url('image.jpg');
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-  
-} */
+
 header{
     padding: 6px;
     text-transform: capitalize;
